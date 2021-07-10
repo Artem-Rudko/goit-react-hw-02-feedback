@@ -11,30 +11,17 @@ class App extends Component {
     };
 
     handleFeedback = e => {
-        if (e.target.textContent === 'Good') {
+        if (e.target.dataset.type === 'good') {
             this.setState(prevState => ({ good: prevState.good + 1 }));
-        } else if (e.target.textContent === 'Neutral') {
+        } else if (e.target.dataset.type === 'neutral') {
             this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
         } else {
             this.setState(prevState => ({ bad: prevState.bad + 1 }));
         }
     };
 
-    countTotalFeedback() {
-        return this.state.good + this.state.neutral + this.state.bad;
-    }
-
-    countPositiveFeedbackPercentage() {
-        return Math.round(
-            (this.state.good * 100) /
-                (this.state.good + this.state.neutral + this.state.bad),
-        );
-    }
-
     render() {
         const { good, neutral, bad } = this.state;
-        const total = this.countTotalFeedback();
-        const positivePercentage = this.countPositiveFeedbackPercentage();
 
         return (
             <div className="App">
@@ -42,13 +29,7 @@ class App extends Component {
                     <FeedbackOptions onLeaveFeedback={this.handleFeedback} />
                 </Section>
                 <Section title="Statistics">
-                    <Statistics
-                        good={good}
-                        neutral={neutral}
-                        bad={bad}
-                        total={total}
-                        positiveFeedback={positivePercentage}
-                    />
+                    <Statistics good={good} neutral={neutral} bad={bad} />
                 </Section>
             </div>
         );
