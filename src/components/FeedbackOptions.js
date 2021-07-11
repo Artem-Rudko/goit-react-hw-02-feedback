@@ -1,3 +1,5 @@
+import './FeedbackOptions.css';
+
 const FeedbackOptions = ({ onLeaveFeedback }) => (
     <div className="feedbackControls">
         <button
