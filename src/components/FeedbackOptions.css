@@ -13,20 +13,20 @@ button {
     background-color: lightsalmon;
 }
 
-.goodBtn:hover,
-.goodBtn:focus {
+.good:hover,
+.good:focus {
     color: #fff;
     background-color: green;
 }
 
-.neutralBtn:hover,
-.neutralBtn:focus {
+.neutral:hover,
+.neutral:focus {
     color: #fff;
     background-color: gold;
 }
 
-.badBtn:hover,
-.badBtn:focus {
+.bad:hover,
+.bad:focus {
     color: #fff;
     background-color: darkred;
 }

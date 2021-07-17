@@ -10,6 +10,7 @@ const Section = ({ title, children }) => (
 
 Section.propTypes = {
     title: PropTypes.string,
+    children: PropTypes.any.isRequired,
 };
 
 export default Section;

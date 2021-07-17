@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Statistics = ({ good, neutral, bad }) => {
     const total = good + neutral + bad;
     const positivePercentage = Math.round(
@@ -19,6 +21,12 @@ const Statistics = ({ good, neutral, bad }) => {
             )}
         </div>
     );
+};
+
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
 };
 
 export default Statistics;

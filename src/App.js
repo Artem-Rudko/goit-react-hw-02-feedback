@@ -11,14 +11,12 @@ class App extends Component {
     };
 
     handleFeedback = e => {
-        if (e.target.dataset.type === 'good') {
-            this.setState(prevState => ({ good: prevState.good + 1 }));
-        } else if (e.target.dataset.type === 'neutral') {
-            this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-        } else {
-            this.setState(prevState => ({ bad: prevState.bad + 1 }));
-        }
+        const { type } = e.target.dataset;
+
+        this.setState(prevState => ({ [type]: prevState[type] + 1 }));
     };
+
+    options = Object.keys(this.state);
 
     render() {
         const { good, neutral, bad } = this.state;
@@ -26,7 +24,10 @@ class App extends Component {
         return (
             <div className="App">
                 <Section title="Please leave feedback">
-                    <FeedbackOptions onLeaveFeedback={this.handleFeedback} />
+                    <FeedbackOptions
+                        options={this.options}
+                        onLeaveFeedback={this.handleFeedback}
+                    />
                 </Section>
                 <Section title="Statistics">
                     <Statistics good={good} neutral={neutral} bad={bad} />
