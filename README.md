@@ -5,3 +5,5 @@ install --save-dev prettier husky lint-staged npm install --save-dev eslint
 
 -   change gh-pages => npm install --save gh-pages => add script "deploy":
     "gh-pages -d build", =>
+
+Developer: Artem R.

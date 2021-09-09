@@ -7,10 +7,12 @@ button {
     margin: 6px;
     outline: none;
     border: none;
-    font-size: 18px;
+    /* font-size: 18px; */
     border-radius: 4px;
     cursor: pointer;
-    background-color: lightsalmon;
+    background-color: papayawhip;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .good:hover,
